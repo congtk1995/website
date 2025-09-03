@@ -70,12 +70,10 @@
 
     <div class="form-group">
       <select id="action">
-        <option value="10">Thép 2.5 ml</option>
-        <option value="20">Thép 2.7 ml</option>
-        <option value="30">Thép 3.0 ml</option>
-        <option value="40">Thép 3.4 ml</option>
-         <option value="40">Thép 4.0 ml</option>
-         <option value="40">Thép 5.0 ml</option>
+        <option value="0.05546">Thép 3.0 ml</option>
+        <option value="0.07549">Thép 3.5 ml</option>
+         <option value="0.09860">Thép 4.0 ml</option>
+         <option value="0.15406">Thép 5.0 ml</option>
       </select>
     </div>
 
@@ -83,7 +81,7 @@
     <div class="form-group"><input type="number" id="b" placeholder="Nhập Chiều Cao"></div>
     <div class="form-group"><input type="number" id="c" placeholder="Nhập Số Dây"></div>
     <div class="form-group"><input type="number" id="d" placeholder="Nhập Chiều Dài"></div>
-
+    <div class="form-group"><input type="number" id="e" placeholder="Nhập Số Lượng"></div>
     <button onclick="tinhKetQua()">Hiển thị kết quả</button>
 
     <div id="result"></div>
@@ -96,13 +94,14 @@
       const b = parseFloat(document.getElementById("b").value) || 0;
       const c = parseFloat(document.getElementById("c").value) || 0;
       const d = parseFloat(document.getElementById("d").value) || 0;
-
+      const e = parseFloat(document.getElementById("e").value) || 0;
+      
       const tong = a * b + c * d;
-      const ketQua = tong * heSo;
+      const ketQua = tong * heSo * e;
     
       document.getElementById("result").innerHTML = `
         <strong>Kết quả:</strong><br>
-        (${a} x ${b} + ${c} x ${d}) × ${heSo} = <strong>${Number(ketQua.toFixed(10))}</strong>
+        ((${a} x ${b} + ${c} x ${d}) × ${heSo}) × ${e} = <strong>${Number(ketQua.toFixed(10))}</strong>
       `;
     }
   </script>
